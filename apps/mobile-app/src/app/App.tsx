@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
-import Greeting from '@common/components/Greeting';
+import 'react-native-gesture-handler';
+// import Greeting from '@common/components/Greeting';
 
 import {
   SafeAreaView,
@@ -13,21 +14,22 @@ import {
   Linking,
 } from 'react-native';
 import Svg, { G, Path } from 'react-native-svg';
+import AllUsers from "./screens/AllUsers";
+import Home from "./screens/Home";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
+
+const Stack = createStackNavigator();
 export const App = () => {
 
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={{ flex: 1 }}>
-        <View style={styles.container}>
-          <Text>This is React Native here</Text>
-
-          {/* Render the Greeting component directly without enclosing it in Text */}
-          <Greeting name="from React Native world!" target="mobile" />
-        </View>
-      </SafeAreaView>
-    </>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="AllUsers" component={AllUsers} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
