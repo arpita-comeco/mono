@@ -29,11 +29,7 @@ const AllUsers = () => {
   }, []);
 
   return (
-    <div>
-      <Container>
-        {users.map(user => <UserCard key={user.id} user={user} />)}
-      </Container>
-    </div>
+      <Container>{users.map(user => <UserCard key={user.id} user={user} />)}</Container>
   );
 };
 

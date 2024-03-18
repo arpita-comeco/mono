@@ -14,7 +14,7 @@ export default function Index() {
             </h1>
             {/*<Greeting name='from Next JS' target='web' />*/}
             <Link href="/all-users">
-              <a>All Users</a>
+              <button style={buttonStyle}>All Users</button>
             </Link>
           </div>
         </div>
@@ -22,3 +22,16 @@ export default function Index() {
     </div>
   );
 }
+
+
+const buttonStyle = {
+  display: 'inline-block',
+  padding: '10px 20px',
+  backgroundColor: '#007bff', // Button color
+  color: '#fff', // Text color
+  textDecoration: 'none',
+  border: 'none',
+  borderRadius: '4px',
+  cursor: 'pointer',
+  marginRight: '10px' // Just an example, you can adjust this as needed
+};
