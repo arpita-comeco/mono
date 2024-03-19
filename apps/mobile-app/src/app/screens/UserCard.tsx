@@ -23,7 +23,7 @@ const UserCard: React.FC<UserCardProps> = ({ user }) => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: '#add8e6',
     borderRadius: 8,
     borderWidth: 1,
     borderColor: '#ddd',

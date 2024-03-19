@@ -10,7 +10,7 @@ export default function Index() {
           <div id="welcome">
             <h1>
               <span> Hello there, </span>
-              Welcome web 👋
+              Welcome web - Powered by Next JS 👋
             </h1>
             {/*<Greeting name='from Next JS' target='web' />*/}
             <Link href="/all-users">
@@ -33,5 +33,6 @@ const buttonStyle = {
   border: 'none',
   borderRadius: '4px',
   cursor: 'pointer',
+  marginTop: '15px',
   marginRight: '10px' // Just an example, you can adjust this as needed
 };

@@ -1,7 +1,7 @@
 // Home.tsx
 
 import React from 'react';
-import { View, Button, StyleSheet } from 'react-native';
+import { View, Button, StyleSheet, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
@@ -13,6 +13,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.paragraph}>Welcome to cooool React Native app! 😎</Text>
       <Button title="All Users" onPress={handlePress} />
     </View>
   );
@@ -23,6 +24,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  paragraph: {
+    fontSize: 25,
+    textAlign: 'center',
+    marginBottom: 20,
+    color: 'orange',
   },
 });
 

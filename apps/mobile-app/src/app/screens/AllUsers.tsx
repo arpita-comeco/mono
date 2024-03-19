@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
-import {fetchAllUsers} from "@common/utils/api/fetchAllUsers";
+import { View, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
+import { fetchAllUsers } from "@common/utils/api/fetchAllUsers";
 import UserCard from './UserCard';
 
 const AllUsersScreen = () => {
+  const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -13,6 +14,8 @@ const AllUsersScreen = () => {
         setUsers(data);
       } catch (error) {
         console.error('Error fetching users:', error);
+      } finally {
+        setLoading(false); // Set loading to false after data fetching is complete
       }
     };
 
@@ -21,11 +24,18 @@ const AllUsersScreen = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={users}
-        renderItem={({ item }) => <UserCard user={item} />}
-        keyExtractor={item => item.id.toString()}
-      />
+      {loading ? (
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      ) : (
+        <FlatList
+          data={users}
+          renderItem={({ item }) => <UserCard user={item} />}
+          keyExtractor={item => item.id.toString()}
+          contentContainerStyle={{ flexGrow: 1 }} // Ensure FlatList fills the container
+        />
+      )}
     </View>
   );
 };
@@ -35,6 +45,11 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
     paddingVertical: 20,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
