@@ -1,5 +1,3 @@
-// UserCard.tsx
-
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import {User} from "@common/utils/types/user";
@@ -52,3 +50,4 @@ const styles = StyleSheet.create({
 });
 
 export default UserCard;
+

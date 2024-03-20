@@ -9,8 +9,8 @@ export default function Index() {
         <div className="container">
           <div id="welcome">
             <h1>
-              <span> Hello there, </span>
-              Welcome web - Powered by Next JS 👋
+              <span> Hello there, 👋</span>
+              Welcome to web - Powered by Next JS
             </h1>
             {/*<Greeting name='from Next JS' target='web' />*/}
             <Link href="/all-users">

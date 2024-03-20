@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import 'react-native-gesture-handler';
 // import Greeting from '@common/components/Greeting';

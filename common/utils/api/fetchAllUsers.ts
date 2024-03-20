@@ -1,4 +1,4 @@
-import { User } from '../types/user'; // Assuming User type is defined in types.ts or a separate file
+import { User } from '../types/user';
 
 export const fetchAllUsers = async (): Promise<User[]> => {
   try {

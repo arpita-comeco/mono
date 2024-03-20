@@ -10,6 +10,13 @@ const Card = styled.div`
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border: 1px solid #999;
+  }
 `;
 
 const UserInfo = styled.div`
