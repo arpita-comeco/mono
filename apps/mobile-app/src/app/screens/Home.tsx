@@ -12,10 +12,13 @@ const Home = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container,
+      Platform.OS === 'android' && styles.androidBackground,
+      Platform.OS === 'ios' && styles.iosBackground
+    ]}>
       <Text style={styles.paragraph}>Welcome to React Native app! 😎</Text>
       <Button title="All Users" onPress={handlePress} />
-      <Text>This is an {Platform.OS} device!</Text>
+      <Text style={styles.deviceText}>This is an {Platform.OS} device!</Text>
     </View>
   );
 };
@@ -30,8 +33,19 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textAlign: 'center',
     marginBottom: 20,
-    color: 'orange',
+    color: '#00008b',
   },
+  androidBackground: {
+    backgroundColor: '#aaa7cc',
+  },
+  iosBackground: {
+    backgroundColor: '#926d88',
+  },
+  deviceText: {
+    marginTop: 12,
+    color: '#654321',
+    fontSize: 30,
+  }
 });
 
 export default Home;
